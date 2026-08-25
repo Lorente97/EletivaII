@@ -140,4 +140,16 @@ class ExerciciosController extends Controller
 
         return view('exer11', ['perimetro' => $perimetro]);
     }
+
+    public function abrirFormExer12(){
+        return view('exer12');
+    }
+
+    public function respostaExer12(Request $request){
+        $base = $request->base;
+        $expoente = $request->expoente;
+        $potencia = $base ** $expoente;
+
+        return view('exer12', ['potencia' => $potencia]);
+    }
 }
