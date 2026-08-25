@@ -42,4 +42,35 @@ class ExerciciosController extends Controller
         return view('exer3', ['multiplicacao' => $multiplicacao]);
     }
 
+    public function abrirFormExer4(){
+        return view('exer4');
+    }
+
+    public function respostaExer4(Request $request){
+        $valor1 = $request->valor1;
+        $valor2 = $request->valor2;
+
+        if($valor2 == 0){
+            $erro = "Não é possível dividir por zero.";
+            return view('exer4', ['erro' => $erro]);
+        }
+
+        $divisao = $valor1 / $valor2;
+        return view('exer4', ['divisao' => $divisao]);
+    }
+
+    public function abrirFormExer5(){
+        return view('exer5');
+    }
+
+    public function respostaExer5(Request $request){
+        $nota1 = $request->nota1;
+        $nota2 = $request->nota2;
+        $nota3 = $request->nota3;
+
+        $media = ($nota1 + $nota2 + $nota3) / 3;
+
+        return view('exer5', ['media' => $media]);
+    }
+
 }
