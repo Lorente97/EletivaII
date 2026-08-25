@@ -95,4 +95,16 @@ class ExerciciosController extends Controller
         return view('exer7', ['celsius' => $celsius]);
     }
 
+    public function abrirFormExer8(){
+        return view('exer8');
+    }
+
+    public function respostaExer8(Request $request){
+        $largura = $request->largura;
+        $altura = $request->altura;
+        $area = $largura * $altura;
+
+        return view('exer8', ['area' => $area]);
+    }
+
 }
