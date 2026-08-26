@@ -186,4 +186,16 @@ class ExerciciosController extends Controller
 
         return view('exer15', ['imc' => $imc]);
     }
+
+    public function abrirFormExer16(){
+        return view('exer16');
+    }
+
+    public function respostaExer16(Request $request){
+        $preco = $request->preco;
+        $desconto = $request->desconto;
+        $precoDesconto = $preco - ($preco * $desconto / 100);
+
+        return view('exer16', ['precoDesconto' => $precoDesconto]);
+    }
 }
