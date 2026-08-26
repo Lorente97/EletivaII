@@ -152,4 +152,26 @@ class ExerciciosController extends Controller
 
         return view('exer12', ['potencia' => $potencia]);
     }
+
+    public function abrirFormExer13(){
+        return view('exer13');
+    }
+
+    public function respostaExer13(Request $request){
+        $metros = $request->metros;
+        $centimetros = $metros * 100;
+
+        return view('exer13', ['centimetros' => $centimetros]);
+    }
+
+    public function abrirFormExer14(){
+        return view('exer14');
+    }
+
+    public function respostaExer14(Request $request){
+        $quilometros = $request->quilometros;
+        $milhas = $quilometros * 0.621371;
+
+        return view('exer14', ['milhas' => $milhas]);
+    }
 }
