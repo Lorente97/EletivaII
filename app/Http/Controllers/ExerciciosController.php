@@ -213,16 +213,16 @@ class ExerciciosController extends Controller
     }
 
     public function abrirFormExer18(){
-        return view('exer18');
+    return view('exer18');
     }
 
     public function respostaExer18(Request $request){
-        $capital = $request->capital;
-        $taxa = $request->taxa;
-        $periodo = $request->periodo;
-        $montante = $capital * ((1 + $taxa) ** $periodo);
+    $capital = $request->capital;
+    $taxa = $request->taxa / 100;
+    $periodo = $request->periodo;
+    $montante = $capital * ((1 + $taxa) ** $periodo);
 
-        return view('exer18', ['montante' => $montante]);
+    return view('exer18', ['montante' => $montante]);
     }
 
     public function abrirFormExer19(){
