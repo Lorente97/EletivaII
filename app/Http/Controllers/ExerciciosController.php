@@ -198,4 +198,17 @@ class ExerciciosController extends Controller
 
         return view('exer16', ['precoDesconto' => $precoDesconto]);
     }
+
+    public function abrirFormExer17(){
+        return view('exer17');
+    }
+
+    public function respostaExer17(Request $request){
+        $capital = $request->capital;
+        $taxa = $request->taxa;
+        $periodo = $request->periodo;
+        $juros = $capital * $taxa * $periodo;
+
+        return view('exer17', ['juros' => $juros]);
+    }
 }
