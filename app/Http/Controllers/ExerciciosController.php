@@ -224,4 +224,32 @@ class ExerciciosController extends Controller
 
         return view('exer18', ['montante' => $montante]);
     }
+
+    public function abrirFormExer19(){
+        return view('exer19');
+    }
+
+    public function respostaExer19(Request $request){
+        $dias = $request->dias;
+        $horas = $dias * 24;
+        $minutos = $horas * 60;
+        $segundos = $minutos * 60;
+
+        return view('exer19', [
+            'horas' => $horas,
+            'minutos' => $minutos,
+            'segundos' => $segundos]);
+    }
+
+    public function abrirFormExer20(){
+        return view('exer20');
+    }
+
+    public function respostaExer20(Request $request){
+        $distancia = $request->distancia;
+        $tempo = $request->tempo;
+        $velocidade = $distancia / $tempo;
+
+        return view('exer20', ['velocidade' => $velocidade]);
+    }
 }
