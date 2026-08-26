@@ -242,14 +242,14 @@ class ExerciciosController extends Controller
     }
 
     public function abrirFormExer20(){
-        return view('exer20');
+    return view('exer20');
     }
 
     public function respostaExer20(Request $request){
-        $distancia = $request->distancia;
-        $tempo = $request->tempo;
-        $velocidade = $distancia / $tempo;
+    $distancia = $request->distancia;
+    $tempo = $request->tempo;
+    $velocidade = $distancia / $tempo;
 
-        return view('exer20', ['velocidade' => $velocidade]);
+    return view('exer20', ['velocidade' => $velocidade]);
     }
 }
